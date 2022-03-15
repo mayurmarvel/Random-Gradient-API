@@ -4,9 +4,14 @@ const express = require('express');
 const axios = require('axios');
 const res = require('express/lib/response');
 const { config } = require('nodemon');
+const cors = require("cors");
 
 
 const app = express();
+
+app.use(cors({
+    origin: "*"
+}))
 
 app.listen(PORT, () => console.log(`Server is running on ${PORT}`));
 
@@ -299,5 +304,8 @@ app.get('/direction/:direction', (req, res) => {
 
 app.get('/', (req, res) => {
 
-    res.json("Welcome to Random-Gradient-API |  visit    | Credits : uigradients.com")
+    let greet = {
+        Welcome: "Welcome to Random-Gradient-API |  visit : https://github.com/mayurmarvel/Random-Gradient-API   | Credits : uigradients.com"
+    }
+    res.json(greet)
 })

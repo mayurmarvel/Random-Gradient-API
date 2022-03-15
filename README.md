@@ -24,11 +24,19 @@ fetch('https://random-gradient-api.herokuapp.com/direction/tr')  // fetching dir
 
 
 ## ENDPOINTS
+
+
 - #### RANDOM
 To get a Random Gradient in Random Direction
 
 ```
 /random
+```
+- #### ALL GRADIENTS
+To get an Array that contains all the gradients to interate through
+
+```
+/all
 ```
 - #### SPECIFIC ANGLE
 To get a Random Gradient in Specific Angle use "0deg" to "360deg" 
@@ -43,7 +51,6 @@ To get a Random Gradient in Specific Direction use the below given Shortcodes
 ```
 /direction/tr
 ```
-
 | Shortcode | Value |
 | ------ | ------ |
 | tt | "to top"|
@@ -57,6 +64,8 @@ To get a Random Gradient in Specific Direction use the below given Shortcodes
 
 * Use only the above mentioned values.
 
+
+
 ### ⚠ NOTES
 > - These Gradients works better with the background **Individual Elements** than Body{}
 > - If you get any artifacts in to Top or to Bottom gradients Try using **to Right** or **to Left** for better Results
@@ -69,7 +78,7 @@ To get a Random Gradient in Specific Direction use the below given Shortcodes
 
 
 ## GRADIENT SOURCE:
-### UIGRADIENTS -> [uigradients.com](https://uigradients.com/ "uigradients.com")
+### 🌈 UIGRADIENTS -> [uigradients.com](https://uigradients.com/ "uigradients.com")
 
-### Built by [-> _ighosh](https://twitter.com/_ighosh "-> _ighosh")
+### 🛠 Built by [-> _ighosh](https://twitter.com/_ighosh "-> _ighosh")
 

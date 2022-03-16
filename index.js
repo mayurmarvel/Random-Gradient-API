@@ -58,9 +58,19 @@ const directions = [
 
 
 
-let allGradients = [];
+const allGradients = [];
+const threeGradients = [];
+const twoGradients = [];
 
+//Greeting Front Page
 
+app.get('/', (req, res) => {
+
+    let greet = {
+        Welcome: "Welcome to Random-Gradient-API |  visit : https://github.com/mayurmarvel/Random-Gradient-API   | Credits : uigradients.com"
+    }
+    res.json(greet)
+})
 
 // Completely Random Direction and Random Color
 
@@ -302,10 +312,90 @@ app.get('/direction/:direction', (req, res) => {
     }
 })
 
-app.get('/', (req, res) => {
 
-    let greet = {
-        Welcome: "Welcome to Random-Gradient-API |  visit : https://github.com/mayurmarvel/Random-Gradient-API   | Credits : uigradients.com"
-    }
-    res.json(greet)
+
+// Get All" THREE COLOR" Gradient as an array
+
+app.get('/three', async (req, res) => {
+
+    axios.get('https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json')
+        .then(data => {
+
+
+
+            for (let colors of data.data) {
+
+
+
+                if (colors.colors.length === 3) {
+
+
+                    let [colorOne, colorTwo, colorThree] = colors.colors;
+
+
+
+                    let colorGradient = {
+                        name: `${colors.name}`,
+                        "gradientColor": `linear-gradient(to right, ${colorOne}, ${colorTwo}, ${colorThree})`,
+                        "colors": [colorOne, colorTwo, colorThree]
+                    }
+
+                    threeGradients.push(colorGradient)
+
+
+                }
+
+
+
+            }
+
+            res.json(threeGradients)
+
+
+        }).catch(err => console.log(err))
+
+
+})
+
+
+// Get All" TWO COLOR" Gradient as an array
+
+app.get('/two', async (req, res) => {
+
+    axios.get('https://raw.githubusercontent.com/ghosh/uiGradients/master/gradients.json')
+        .then(data => {
+
+
+
+            for (let colors of data.data) {
+
+
+
+                if (colors.colors.length === 2) {
+
+
+                    let [colorOne, colorTwo] = colors.colors;
+
+
+
+                    let colorGradient = {
+                        "name": `${colors.name}`,
+                        "gradientColor": `linear-gradient(to right, ${colorOne}, ${colorTwo})`,
+                        "colors": [colorOne, colorTwo]
+                    }
+
+                    twoGradients.push(colorGradient);
+
+
+                }
+
+
+            }
+
+            res.json(twoGradients)
+
+
+        }).catch(err => console.log(err))
+
+
 })

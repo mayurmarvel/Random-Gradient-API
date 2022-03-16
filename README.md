@@ -32,11 +32,23 @@ To get a Random Gradient in Random Direction
 ```
 /random
 ```
-- #### ALL GRADIENTS
-To get an Array that contains all the gradients to interate through
+- #### ALL GRADIENTS 
+To get an Array that contains all the gradients to interate through [ Default Direction = "to Right"]
 
 ```
 /all
+```
+- #### ALL TWO COLOR GRADIENTS 
+To get an Array that contains all the two color gradients to interate through  [Default Direction = "to Right"]
+
+```
+/two
+```
+- #### ALL THREE COLOR GRADIENTS 
+To get an Array that contains all the three color gradients to interate through  [Default Direction = "to Right"]
+
+```
+/three
 ```
 - #### SPECIFIC ANGLE
 To get a Random Gradient in Specific Angle use "0deg" to "360deg" 
@@ -69,7 +81,7 @@ To get a Random Gradient in Specific Direction use the below given Shortcodes
 ### ⚠ NOTES
 > - These Gradients works better with the background **Individual Elements** than Body{}
 > - If you get any artifacts in to Top or to Bottom gradients Try using **to Right** or **to Left** for better Results
-
+> - Try to use White Content on these Gradient Backgrounds as most of the gradients are dark
 
 ------------
 
